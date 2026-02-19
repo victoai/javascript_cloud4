@@ -60,7 +60,39 @@
     <script> 
 
 
-        function calPrice(obj) {    
+        // 수량이 변경되면 금액을 갱신하기 
+        function calPrice(obj) {   
+            console.log( obj ) ;   //  수량이 있는   input
+
+            //수량 
+            //단가(단가)
+            //금액계산기
+            //금액 영역에 계산된 금액넣어주기 
+            let qty  =  parseInt ( obj.value);
+
+            //유효성체크 
+
+            //this(수량태그) 를 기준으로 가까운tr찾기
+
+            const tr = obj.closest("tr");
+            console.log(tr);
+
+
+            const price  =parseInt( tr.querySelector("td:nth-child(3)").innerHTML);
+            console.log(price);
+
+
+            //금액계산하기 
+
+            const amt  = qty* price;
+            console.log( amt);
+
+            //금액 요소 얻어오기
+
+            const amtTd =  tr.querySelector(".amt");
+            console.log( amtTd);
+            amtTd.innerHTML = amt; 
+
            
 
         }
