@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //문제1
+        {
+            let su = Math.floor(Math.random() * 200 + 1);
+            let flag = false;
+
+
+            function 홀수인지판단(su){
+                if(su%2==0){
+                    flag = false;
+                } else {
+                    flag = true;
+                }
+
+              return flag;
+            }
+
+            alert(홀수인지판단());
+
+        }
+
+        //문제2
+        {
+
+            function 성인인지판단(){
+
+                 let su1 = Math.floor(Math.random() * 100 + 1);
+                let flag = false;
+
+
+            if(age>=20){
+                flag = true;
+            } else if(age<20){
+                flag = false;
+            }
+
+            return flag;
+        }
+
+
+            alert(홀수인지판단());
+
+
+        }
+
+        //문제3
+
+        
+        {   
+            
+            function 구구단(){
+
+                let su2 = Math.floor(Math.random() * 9 + 1);
+
+                alert(su2);
+
+                for(let i=1; i<=9; i++){
+                document.write(su2 + "*" + i + "=" + (su2*i));
+                document.write("<br>");
+            }
+            
+        }
+            alert(구구단());
+
+
+        }
+
+        //문제4
+        {         
+                function 사각형넓이(){
+                let su3 = Math.floor(Math.random() * 200 + 1);
+                let su4 = Math.floor(Math.random() * 200 + 1);
+
+                alert(su3);
+                alert(su4);
+
+               document.write(su3 + "*" + su4 + "=" + (su3*su4)); 
+
+                document.write("<br>");
+                return su3*su4;
+                }
+
+                alert(사각형넓이());
+
+
+        }
+
+        //문제5
+        {
+            let su5 = Math.floor(Math.random() * 200 + 1);
+            let su6 = Math.floor(Math.random() * 200 + 1);
+
+              function 더하기(su5, su6){
+                
+
+                alert(su5);
+                alert(su6);
+
+               document.write(su5 + "+" + su6 + "=" + (su5+su6)); 
+
+                document.write("<br>");
+                return su5+su6;
+                }
+
+                alert(더하기(su5, su6));
+
+
+
+                
+        }
+
+           //문제6
+        {
+            let su7 = Math.floor(Math.random() * 200 + 1);
+            let su8 = Math.floor(Math.random() * 200 + 1);
+
+              function 나머지(su7, su8){
+                
+
+                alert(su7);
+                alert(su8);
+
+               document.write(su7 + "%" + su8 + "=" + (su7%su8)); 
+
+                document.write("<br>");
+                return su7%su8;
+                }
+
+                alert(나머지(su7, su8));
+
+
+        }
+
+        //문제7
+        {
+             let su9 = Math.floor(Math.random() * 10 + 1);
+            function 별찍기(su9){
+            for(let k=1; k<=su9; k++){
+            for(let i=1; i<=k; i++){
+            document.write("*");
+        }
+        document.write("<br>");
+        }
+        }
+
+        alert(별찍기(su9));
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

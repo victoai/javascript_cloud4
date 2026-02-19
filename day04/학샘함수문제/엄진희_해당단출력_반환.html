@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        /*
+          기능: 구구단 출력
+          입력: 단 숫자
+          반환: 해당 구구단
+        */
+        function 구구단출력(k){
+            let result  ="";
+
+            for(let i=1; i<=9; i++){
+                result +=  k + "x" + i + "="+  k*i + "<br>" ; 
+            }
+            return result;
+        }
+
+        let k = prompt("출력할 구구단을 입력하세요");
+        let 결과= 구구단출력(k);
+        alert(결과  );
+        let  resultTag  =  document.getElementById("result");
+        resultTag.innerHTML =결과;
+        resultTag.style.border="1px solid black";
+
+        
+    </script>
+</body>
+</html>

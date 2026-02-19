@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function 로또(){
+
+            let num1 = Math.floor(Math.random() * 45);
+            let num2 = Math.floor(Math.random() * 45);
+            let num3 = Math.floor(Math.random() * 45);
+            let num4 = Math.floor(Math.random() * 45);
+            let num5 = Math.floor(Math.random() * 45);
+            let num6 = Math.floor(Math.random() * 45);
+            let num7 = Math.floor(Math.random() * 45);
+            
+            let lotto = [num1, num2, num3, num4, num5, num6, num7]
+            //중복처리를 못했습니다
+            //set, while 활용시켜서 발전 -> while:배열길이가 증가할 때까지
+            //중복이면 배열길이가 증가하지 않으므로
+            return lotto;
+        }
+        alert(로또());
+    </script>
+</body>
+</html>

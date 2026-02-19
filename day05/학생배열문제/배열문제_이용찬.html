@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+
+        // 1
+        {
+            const 과일 = ['apple', 'banana', 'cherry'];
+            alert(과일[0]);
+            alert(과일[2]);
+        }
+
+        // 2
+        {
+            const 컬러 = ['red', 'blue', 'green', 'yellow'];
+            alert(컬러.length);
+        }
+
+        // 3
+        {
+            const 점수 = [10, 20, 30, 40];
+            let sum = 0;
+            for(let i=0; i<점수.length; i++){
+                sum += 점수[i];
+            }
+        }
+
+        // 4
+        {
+            const 이름 = ['영숙', '순자','영자','옥순','현숙'];
+            for(let i=0; i<이름.length; i++){
+                alert(이름[i]);
+            }
+        }
+
+        // 5
+        {
+            const  numbers = [2, 4, 6, 8, 10];
+            let result = false;
+            for(let i=0; i<numbers.length; i++){
+                if(numbers[i] == 7){
+                    result = true;
+                    break;
+                }
+            }
+            alert(result);
+        }
+
+        // 6
+        {
+            const numbers = [12, 41, 6, 18, 10];
+            let max = 0;
+            for(let i=0; i<numbers.length; i++){
+                if(max < numbers[i]){
+                    max = numbers[i];
+                }
+            }
+            alert(max);
+        }
+
+        // 7
+        {
+            const kors = [90, 80, 70, 99, 100];
+            let total = 0;
+            let aver = 0;
+            for(let i=0; i<kors.length; i++){
+                total += kors[i];
+            }
+            aver = total / kors.length;
+            alert(`${total}과 ${aver}`);
+        }
+
+        // 8
+        {
+            const kors = [90, 80, 70, 99, 100];
+            let cnt = 0;
+            let total = 0;
+            let aver = 0;
+            for(let i=0; i<kors.length; i++){
+                total += kors[i];
+            }
+            aver = total / kors.length;
+            for(let i=0; i<kors.length; i++){
+                if(aver < kors[i]){
+                    cnt++;
+                }
+            }
+            alert(cnt);
+        }
+        
+
+        // 9
+        {
+            const prices = [1000, 1500, 900, 1800, 2000, 1200];
+            let newArray = [];
+            for(let i=0; i<prices.length; i++){
+                if(1200 < prices[i]){
+                    newArray.push(prices[i]);
+                }
+            }
+            alert(newArray);
+        }
+
+        // 10
+        {
+            const numbers = [1, 2, 3, 4, 5];
+            let newArray = [];
+            for(let i=0; i<numbers.length; i++){
+                newArray.push(prices[i]*2);
+            }
+        }
+
+        // 11
+        {
+            let fruits = ["자두", "복숭아", "포도"];
+            let result = false;
+            for(let i=0; i<fruits.length; i++){
+                if(fruits[i] == "자두"){
+                    result = true;
+                }
+            }
+            alert(result);
+        }
+
+        // 12
+        {
+            let fruits = ["자두", "복숭아", "포도"];
+            let newArray = [];
+            for(let i=fruits.length=1; i>=0; i--){
+                newArray.push(fruits[i]);
+            }
+            alert(newArray);
+        }
+
+        // 13
+        {
+            let fruits = ["자두", "복숭아", "포도"];
+            let newArray = fruits.reverse();
+        }
+    </script>
+</body>
+</html>

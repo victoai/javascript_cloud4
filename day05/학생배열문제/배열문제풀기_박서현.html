@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//문제1
+{
+const 과일 = ['apple', 'banana', 'cherry'];
+alert(과일[0]);
+alert(과일[2]);
+}
+
+//문제2
+{
+const 컬러 = ['red', 'blue', 'green', 'yellow'];
+alert(컬러.length);
+}
+
+//문제3
+{
+const 점수 = [10, 20, 30, 40];
+let sum = 0;
+
+for(let i=0; i<점수.length; i++){
+    sum += 점수[i];
+}
+
+alert(sum);
+}
+
+//문제4
+{
+const 이름 = ['영숙', '순자','영자','옥순','현숙'];
+for(let i=0; i<이름.length; i++){
+    alert(이름[i]);
+}
+}
+
+//문제5
+{
+    
+const  numbers = [2, 4, 6, 7, 8, 10];
+let 확인 = false;
+let num = 7;
+
+for(let i=0; i<numbers.length; i++){
+    
+    if(num == numbers[i]){
+        확인 = true;
+        break;
+        
+    }
+}
+alert(확인);
+
+}
+
+//문제6
+{
+const numbers = [12, 41, 6, 18, 10];
+
+
+ let max=0;
+
+    for(let i = 0; i<numbers.length ; i++  ){
+        
+        if(numbers[i]>max){
+            max = numbers[i];
+        }
+    }
+
+    alert(max);
+
+}
+
+//문제7
+{
+const kors = [90, 80, 70, 99, 100];
+let sum = 0;
+ for(let i = 0; i<kors.length ; i++  ){
+        
+        sum = sum + kors[i];
+    }
+
+alert(`총점은 ${sum} 입니다`);
+
+alert(`평균은 ${sum/kors.length} 입니다`);
+
+}
+
+//문제8
+{
+const kors = [90, 80, 70, 99, 100];
+let cnt = 0;
+let sum = 0;
+let 평균 = 0;
+
+ for(let i = 0; i<kors.length ; i++  ){
+        
+        sum = sum + kors[i];  
+    }
+
+    평균 = sum/kors.length;
+
+ alert(`평균은 ${평균}`);
+
+  for(let i = 0; i<평균 ; i++  ){
+        
+         if(kors[i]>평균){
+            cnt = cnt + 1;
+        }
+    }
+
+ alert(`평균보다 높은 점수의 개수는 ${cnt}개입니다`);
+}
+
+//문제9
+{
+const prices = [1000, 1500, 900, 1800, 2000, 1200];
+let a = [];
+let cnt = 0;
+
+for(let i = 0; i<prices.length ; i++  ){
+        
+         if(prices[i]>1200){
+            
+            a[cnt] = prices[i];
+            cnt = cnt+1;
+        }
+
+    }
+
+    alert(a);
+}
+
+//문제10
+{
+const numbers = [1, 2, 3, 4, 5];
+let b = [];
+let cnt = 0;
+
+for(let i = 0; i<numbers.length ; i++  ){
+    numbers[i] = numbers[i]*2;
+    b[cnt] = numbers[i];
+    cnt = cnt + 1;
+    }
+
+alert(b);
+
+}
+
+//문제11
+{
+let fruits = ["자두", "복숭아", "포도"];
+let 확인 = false;
+let 찾는과일 = "자두";
+
+for(let i = 0; i<fruits.length ; i++ ){
+    if(fruits[i] == 찾는과일){
+        확인 = true;
+        break;
+    }
+    }
+
+    alert(확인);
+
+}
+
+//문제12
+{
+let fruits = ["자두", "복숭아", "포도"];
+let c = [];
+
+for(let i = 0; i<fruits.length ; i++){
+    c[i] = fruits[fruits.length-i-1];
+    }
+
+alert(c);
+
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+         1.  홀수인지판단하는 함수 만들기  ( 수 -> 홀수이면  true, false  반환 )
+
+         
+            📝
+            function 홀수(number) {
+            
+                if (number % 2 !== 0) {
+                    return true;  
+                } else {
+                    return false; 
+                }
+            }
+
+            // --- 실행 테스트 ---
+            console.log(홀수(3)); // 결과: true
+            console.log(홀수(4)); // 결과: false
+
+         2.  성인판단하는 함수 만들기  (  나이  -> 20세 이상이면 true, false 반환 )
+
+
+            📝
+            function 성인(age) {
+                if (age >= 20) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            // --- 실행 테스트 ---
+            console.log(성인(25)); // 결과: true
+            console.log(성인(15)); // 결과: false
+
+
+         3.  구구단을 출력하는 함수 만들기  ( 단  -> 해당 단을 출력하기  )
+
+
+                📝
+                
+                    for(let k=2; k<=9; k++){  
+                    document.write(k + "단 출력 <br>");
+                    for(let i=1; i<=9; i++){
+                    document.write(k*i +"<br>")
+        }
+        }
+         4.  사각형의 넓이를 구하는 함수 만들기  (가로, 세로  -> 넓이를 반환하기  )
+
+
+                📝
+                    function 사각형의넓이(width, height) {                
+                        let area = width * height;                    
+                        return area;
+                    }
+                    // --- 실행 테스트 ---
+                    let 면적 = 사각형의넓이(10, 5); 
+                    console.log(면적); // 결과: 50
+
+
+         5.  두 수를 매개변수로 받아서  합을 구하는 함수 만들기 ( 두 수  - > 합을 반환하기 )
+
+                📝
+                    function 두수의합(num1, num2) {
+                        return num1 + num2; 
+                    }
+
+                    // --- 실행 테스트 ---
+                    console.log(두수의합(10, 20)); // 결과: 30
+
+
+
+         6.  두 수를 매개변수로 받아서  나머지를 구하는 함수 만들기  ( 두 수  -> 나머지를 반환하기)
+
+                📝
+                    function 나머지(num1, num2){
+                        return num1 % num2;
+                    }
+                    // --- 실행 테스트 ---
+                    console.log(나머지(10, 3)); //결과 : 1
+
+         7.  입력된 수만큼 별찍기  (  수   -> 수만큼 별찍기  )
+
+                📝
+                     for (let k = 1; k <= 5; k++) {
+                     for (let i = 1; i <= 5; i++) {
+                     document.write("*");
+                     }
+                     document.write("<br>");
+                    }
+      
+         
+         
+         
+         
+         함수호출시 외부로 부터 받는 값이 필요한 것은 매개변수를 사용해 주세요 ^^

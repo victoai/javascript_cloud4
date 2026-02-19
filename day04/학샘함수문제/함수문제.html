@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        문제 1
+        기능: 매개변수를 받아 홀수인지 판단
+        입력: 수
+        반환: true, false
+        */
+      {
+        function 홀수판단함수(num) {
+          let div = num % 2;
+          if (div == 0) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+        let num = prompt("수를 입력하세요");
+        result = 홀수판단함수(num);
+        alert(result);
+      }
+
+      /*
+        문제 2
+        기능: 매개변수를 받아 성인인지 판단
+        입력: 나이
+        반환: true, false
+        */
+      {
+        function 성인판단함수(age) {
+          if (age >= 20) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        let age = prompt("나이를 입력하세요");
+        let result = 성인판단함수(age);
+        alert(result);
+      }
+
+      /*
+       문제 3
+       기능: 매개변수를 받아 해당 단의 구구단을 반환
+       입력: 반환할 구구단의 단
+       반환: 구구단
+       */
+      {
+        function 구구단생성기(dan) {
+          document.write("<h2>" + dan + "단</h2><br>");
+          for (let i = 1; i <= 9; i++) {
+            document.write(dan + " x " + i + " = " + dan * i + "<br>");
+          }
+        }
+        let dan = prompt("반환할 구구단의 단을 입력하세요");
+        let result = 구구단생성기(dan);
+      }
+
+    /*
+        문제 4
+        기능: 매개변수를 입력받아 사각형의 넓이를 반환한다
+        입력: 가로 길이, 세로 길이
+        반환: 사각형의 넓이
+    */
+
+    {
+        function 사각형넓이구하기(width, height){
+            let area = width * height;
+            return area;
+        }
+
+        let width = prompt("사각형의 가로 길이를 입력하세요");
+        let height = prompt("사각형의 세로 길이를 입력하세요");
+        let result = 사각형넓이구하기(width, height);
+        alert("사각형의 넓이는" + result);
+    }
+
+    /*
+        문제 5
+        기능: 두 수를 매개변수로 받아 합을 구함
+        입력: 두 수
+        반환: 두 수의 합
+    */
+
+    {
+        function 합구하기(num1, num2){
+            let sum = num1 + num2;
+            return sum;
+        }
+
+        let num1 = parseInt(prompt("첫 번째 수를 입력하세요"));
+        let num2 = parseInt(prompt("두 번째 수를 입력하세요"));
+        let result = 합구하기(num1, num2);
+        alert("두 수의 합은 " + result);
+    }
+
+    /*
+        문제 6
+        기능: 두 수를 매개변수로 받아서 나머지를 구하는 함수 만들기
+        입력: 두 수
+        반환: 나머지
+    */
+   
+    {
+        function 나머지구하기(num1, num2){
+            let margin = num1 % num2;
+            return margin
+        }
+
+        let num1 = parseInt(prompt("첫 번째 수를 입력하세요"));
+        let num2 = parseInt(prompt("두 번째 수를 입력하세요"));
+        let result = 나머지구하기(num1, num2);
+        alert(num1 + "에서 " + num2 + "로 나눈 나머지는 " + result);
+    }
+
+    /*
+        문제 7
+        기능: 입력된 수만큼 별 찍기
+        입력: 별의 개수
+        반환: 별
+    */
+
+    {
+        function 별찍기(num){
+            for(let i = 1; i <= num; i++){
+                document.write("*");
+            }
+        }
+        let num = prompt("찍을 별 개수를 입력하세요");
+        let result = 별찍기(num);
+    }
+    </script>
+  </body>
+</html>

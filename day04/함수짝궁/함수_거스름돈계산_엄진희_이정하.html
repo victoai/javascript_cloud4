@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //엄진희
+        function exchange(price, pay){ // 남는 금액 계산 함수
+        let change = pay - price;      // 거스름돈 = 낸돈 - 가격
+        
+        if (change < 0) {change = -1};     // change가 음수면 돈이 부족하다는 뜻, change 에 -1 로 저장
+        return change;    
+        }
+
+        //이정하
+        function exchangeCheck(change){ // 지폐를 각각 몇장 줘야 하는지 확인
+        let money = [50000, 10000, 5000, 1000, 500, 100]; //지폐 배열
+        let result = []; //  {지폐, 개수} , {지폐, 개수} ... 로 저장될 함수 생성
+
+        for (let i = 0; i < money.length; i++){
+            let unit = money[i];
+
+            let change2 = change // 거스름돈을 다른 변수에 저장
+            let count = parseInt(change / unit); // money[i]에 대해 필요한 지폐 계산 : 몫이 필요한 지폐 장 개수가 됨
+            
+
+            change2 = change % unit; //몫을 제외한 나머지
+
+            document.write(unit + "원, " + count + "개<br>");
+            result.push({ unit, count }); //result 배열에 집어 넣기 - 2차원 배열
+        }
+
+        document.write("거스름돈: "+change);
+        return result;
+    }
+
+        let price = parseInt(prompt("가격을 입력해주세요."));
+        let pay = parseInt(prompt("지불금액을 입력해주세요."));
+
+        let change = 거스름돈(price, pay);
+
+        if (change == -1) {
+        alert("돈이 부족합니다.");
+        } else {
+        지폐확인(change);
+        }
+
+    </script>
+</body>
+</html>
+
+

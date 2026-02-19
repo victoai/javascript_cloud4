@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    </style>
+
+    <script>
+        const images = [
+            "https://i.pinimg.com/736x/59/36/1e/59361e8216ee1ed7b341c817374d995a.jpg",
+            "https://i.pinimg.com/736x/c7/a8/56/c7a856e0e74407b2ede1470d050b1fb3.jpg",
+            "https://i.pinimg.com/736x/04/2d/ff/042dff2b068be13686908ff589171c5e.jpg",
+            "https://i.pinimg.com/736x/03/99/3d/03993d5bc90a8482195c17f27bd4a3ca.jpg",
+            "https://i.pinimg.com/736x/27/3c/61/273c611f15c4b9883d1b54ce99af3aab.jpg"
+        ]
+
+        function miso(){
+            const anime = document.querySelector(".anime");
+
+            anime.innerHTML="";
+
+            anime.style.width="300px";
+            anime.style.height="300px";
+
+            const randomIndex = Math.floor(Math.random() * images.length);  //  
+
+            anime.style.backgroundImage = `url(${images[randomIndex]})`;
+
+            anime.style.backgroundPosition="center";
+            anime.style.backgroundSize="cover";
+        }
+    </script>
+
+</head>
+<body>
+
+    <h2> 랜덤 미소녀 뽑기 ヾ(≧▽≦*) !! </h2>
+
+    <div class="anime"> 누가 나올까 ?</div>
+
+       <button onclick="miso()">뽑아봐 !</button>
+
+</body>
+</html>

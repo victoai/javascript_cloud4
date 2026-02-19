@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function total_even(num){
+            let total_even = 0;
+            for(i=1; i<(num+1); i++){
+                if(i%2==0){
+                    total_even += i;
+                }
+            }
+            return total_even;
+        }
+        function total_odds(num){
+            let total_odds = 0;
+            for(i=1; i<(num+1); i++){
+                if(i%2==1){
+                    total_odds += i;
+                }
+            }
+            return total_odds;
+        }
+        function print(num){
+            let total_even_num = total_even(num);
+            let total_odds_num = total_odds(num);
+            alert("짝수 총합은 "+total_even_num);
+            alert("홀수 총합은 "+total_odds_num);
+        }
+        let num = parseInt(prompt("수를 입력하세요: "));
+        print(num);
+    </script>
+</body>
+</html>

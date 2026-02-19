@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수문제 복습</title>
+  </head>
+  <body>
+    <script>
+      /*
+            
+         1.  홀수인지판단하는 함수 만들기  ( 수 -> 홀수이면  true, false  반환 )
+
+         2.  성인판단하는 함수 만들기  (  나이  -> 20세 이상이면 true, false 반환 )
+
+         3.  구구단을 출력하는 함수 만들기  ( 단  -> 해당 단을 출력하기  )
+
+         4.  사각형의 넓이를 구하는 함수 만들기  (가로, 세로  -> 넓이를 반환하기  )
+
+         5.  두 수를 매개변수로 받아서  합을 구하는 함수 만들기 ( 두 수  - > 합을 반환하기 )
+
+         6.  두 수를 매개변수로 받아서  나머지를 구하는 함수 만들기  ( 두 수  -> 나머지를 반환하기)
+
+         7.  입력된 수만큼 별찍기  (  수   -> 수만큼 별찍기  )
+         
+         
+         
+         
+         함수호출시 외부로 부터 받는 값이 필요한 것은 매개변수를 사용해 주세요 ^^
+        */
+
+      //1
+      {
+        function odd(su) {
+          if (su % 2 == 1) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        let su = parseInt(prompt("숫자를 입력해 주세요"));
+        let result = odd(su);
+
+        if (result) {
+          alert(su + " 는 홀수 입니다.");
+        } else {
+          alert(su + " 는 짝수 입니다.");
+        }
+      }
+
+      //2
+      {
+        function adult(age) {
+          if (age >= 20) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        let age = parseInt(prompt("나이를 입력해 주세요"));
+        let result = adult(age);
+
+        if (result) {
+          alert("20세 이상 성인입니다.");
+        } else {
+          alert("20세 이하 성인이아닙니다.");
+        }
+      }
+
+      //3
+      {
+        function multiplicationTable(num) {
+          for (let i = 1; i <= 9; i++) {
+            document.write(num + " × " + i + " = " + num * i + "<br>");
+          }
+        }
+
+        let num = parseInt(prompt("출력할 구구단을 입력해 주세요"));
+        multiplicationTable(num);
+      }
+
+      //4
+      {
+        function squareArea(width, height) {
+          let area = width * height;
+          return area;
+        }
+
+        let width = parseInt(
+          prompt("넓이를 구할 사각형의 가로길이를 입력해 주세요"),
+        );
+        let height = parseInt(
+          prompt("넓이를 구할 사각형의 세로길이를 입력해 주세요"),
+        );
+
+        alert("입력한 값의 사각형 넓이 : " + squareArea(width, height));
+      }
+
+      //5
+      {
+        function add(num1, num2) {
+          let result = num1 + num2;
+          return result;
+        }
+
+        let num1 = parseInt(prompt("더하기할 첫번째 수"));
+        let num2 = parseInt(prompt("더하기할 두번째 수"));
+        alert("입력한 두 수를 더한 값 : " + add(num1, num2));
+      }
+
+      //6
+      {
+        function divide(num1, num2) {
+          let quotientResult = num1 / num2;
+          let remainderResult = num1 % num2;
+
+          return {
+            quotient: quotientResult,
+            remainder: remainderResult,
+          };
+        }
+
+        let num1 = parseInt(prompt("나누기할 첫번째 수"));
+        let num2 = parseInt(prompt("나누기할 두번째 수"));
+
+        let result = divide(num1, num2);
+
+        alert(
+          "입력한 두 수를 나눈 값의 몫: " +
+            result.quotient +
+            "\n" +
+            "나머지: " +
+            result.remainder,
+        );
+      }
+
+      //7
+      {
+        function star(num) {
+          for (let i = 1; i <= num; i++) {
+            for (let j = 1; j <= i; j++) {
+              document.write("*");
+            }
+            document.write("<br>");
+          }
+        }
+
+        let num = parseInt(prompt("별을 얼마나 찍어볼지 입력"));
+        star(num);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 명언 생성기</title>
+    <style>
+        .box{
+            border: 1px dashed black;
+            width: 500px;
+        }
+        h5{
+            text-align: center;
+            border-bottom: 1px dashed black;
+            margin: 20px;
+        }
+        p{
+            padding: 0 20px;
+        }
+
+    </style>
+    <script>
+        const myungun = [
+            "오늘의 작은 선택이 내일의 방향을 만든다.",
+            "완벽보다 완료가 더 큰 힘이다.",
+            "지금의 불편함은 성장의 가격표다.",
+            "한 번의 시도는 한 번의 가능성을 연다.",
+            "느려도 괜찮다, 멈추지만 않으면 된다.",
+            "어제의 나와 비교하면 충분히 전진한 것이다.",
+            "두려움은 준비가 시작되었다는 신호다.",
+            "실수는 배움이 남긴 흔적이다.",
+            "꾸준함은 재능을 이기는 가장 조용한 무기다.",
+            "작은 습관이 큰 성취를 데려온다.",
+            "시작은 항상 어색하지만, 끝은 항상 멋지다.",
+            "할 수 있을 때 한 걸음, 그 한 걸음이 길이 된다.",
+            "불확실한 날에도 할 일은 분명하다: 한 번 더 해보기.",
+            "성공은 속도가 아니라 방향을 고르는 일이다.",
+            "지금의 연습이 나중의 자신감을 만든다." //0 ~ 14
+        ]
+
+        function showMyungun() {
+            const title = document.getElementById("myung-un"); // 버튼 클릭시 크게 나타나는 명언
+            const result = document.getElementById("result"); //생성됐던 명언 목록
+
+            const num = Math.floor(Math.random() * myungun.length ); //난수 설정 - 랜덤으로 배열 선택
+            const myungunBox = myungun[num]; // 변수에 배열 랜덤 저장
+            
+            //생성한 명언 제목으로 표시
+            title.textContent = myungunBox;  //textContent : html 요소의 텍스트를 가져오거나 설정
+
+            //생성됐던 명언은 아래 목록에 표시되게 하기
+            const text = document.createElement("p"); //p 태그로 생성되게
+            text.textContent = myungun[num];
+            
+            
+            result.appendChild(text);
+            
+            //최신 명언이 위로 올라오게
+            result.prepend(text);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        
+        <button onclick="showMyungun()">오늘의 명언</button>
+        <h2 id = "myung-un"></h2>
+        <div class="box">
+            <h5>생성됐던 명언 목록</h5>
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

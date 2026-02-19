@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let input;
+        let randomSu;
+        let tryCnt=0;
+
+        randomSu  = Math.floor(  (Math.random() *100 )) +1 ;  //1~100   
+        console.log(randomSu );
+
+        while(true){
+           
+            input = prompt("수를 입력하시오");
+            tryCnt= tryCnt+1;
+            if(  randomSu   ==  input) break;   // 탈출조건( 같으면 탈출)
+
+            //더큰수 또는 더 작은 수 
+            if( input < randomSu){
+                alert(" 더 큰수 입력");
+            }else if( input > randomSu){
+                alert("더 작은 수 입력");
+            }
+        }
+        //
+        if( tryCnt <=3){
+            alert("간식성공 🍬🤩");
+        }else{
+             alert( tryCnt +  " 성공  🤩");
+        }
+
+
+    </script>
+</body>
+</html>

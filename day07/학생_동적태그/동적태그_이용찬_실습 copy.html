@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-size: 2rem;
+            display:flex;
+            flex:1;
+            min-height: 100vh;
+            align-items: center;
+        }
+        .smart-phone{
+            width: 400px;
+            height: 700px;
+            border: 10px solid black;
+            border-radius: 10px;
+            background-color: gray;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .clock {
+            width: 15rem;
+            height: 15rem;
+            border:20px solid white;
+            border-radius:50%;
+            margin:50px auto;
+            position: relative;
+            padding:2rem;
+            box-shadow:
+            0 0 0 4px rgba(0,0,0,0.1),
+            inset 0 0 0 3px #EFEFEF,
+            inset 0 0 10px black,
+            0 0 10px rgba(0,0,0,0.2);
+        }
+        .clock-face {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-3px); /* account for the height of the clock hands */
+        }
+        .hand {
+            width:50%;
+            height:6px;
+            background:black;
+            position: absolute;
+            top:50%;
+            transform-origin: 100%; /*오른쪽 끝(시계 중심)을 기준으로 초침&분침&시침들을 transform*/
+            transform: rotate(90deg); /*시계방향으로 90도 돌려서 침들이 12시를 가리키게 초기화*/
+            transition: all 0.05s;
+            transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+        }
+        .button-wrap{
+            display:flex;
+            flex-direction: column;
+        }
+        .button{
+            height: 70px;
+            margin: 5px;
+            border-radius: 15px;
+        }
+        .button:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section class="smart-phone">
+        <div class="clock-wrap">
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand min-hand"></div>
+                    <div class="hand second-hand"></div>
+                </div>
+            </div>
+        </div>
+        <div class="button-wrap">
+            <button class="button" id="korea-button">SEOUL-CLOCK</button>
+            <button class="button" id="usa-button">NEWYORK-CLOCK</button>
+            <button class="button" id="russia-button">MOSCOW-CLOCK</button>
+        </div>
+    </section>
+    <script>
+        // 시계바늘 가져오기
+        const secondHand = document.querySelector('.second-hand');
+        const minsHand = document.querySelector('.min-hand');
+        const hourHand = document.querySelector('.hour-hand');
+
+        // 버튼 가져오기
+        const koreaButton = document.getElementById("korea-button");
+        const usaButton = document.getElementById("usa-button");
+        const russiaButton = document.getElementById("russia-button");
+
+        // 한국 시계
+        function setKoreaDate(){
+            const now = new Date();//시간 관련 함수 가져오기
+
+            const seconds = now.getSeconds();//현재 초 가져오기
+            const secondsDegrees = ((seconds/60)*360) + 90;//각도로 변환
+            secondHand.style.transform = `rotate(${secondsDegrees}deg)`;//'이 아니라 `임
+
+            const mins = now.getMinutes();
+            const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
+            minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+            const hour = now.getHours();
+            const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
+            hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+
+            console.log(seconds);
+            console.log(mins);
+            console.log(hour);
+            
+            
+        }
+
+        // 미국 시계
+        function setUsaDate(){
+            
+            const now = new Date();//시간 관련 함수 가져오기
+
+            const seconds = now.getSeconds();//현재 초 가져오기
+            const secondsDegrees = ((seconds/60)*360) + 90;//각도로 변환
+            secondHand.style.transform = `rotate(${secondsDegrees}deg)`;//'이 아니라 `임
+
+            const mins = now.getMinutes();
+            const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
+            minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+            const hour = (now.getHours()+24-14)%24;
+            const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
+            hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+
+            console.log(seconds);
+            console.log(mins);
+            console.log(hour);
+            
+            
+        }
+
+        // 러시아 시계
+        function setRussiaDate(){
+            const now = new Date();//시간 관련 함수 가져오기
+
+            const seconds = now.getSeconds();//현재 초 가져오기
+            const secondsDegrees = ((seconds/60)*360) + 90;//각도로 변환
+            secondHand.style.transform = `rotate(${secondsDegrees}deg)`;//'이 아니라 `임
+
+            const mins = now.getMinutes();
+            const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
+            minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+            const hour = (now.getHours()+24-6)%24;
+            const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
+            hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+
+            console.log(seconds);
+            console.log(mins);
+            console.log(hour);
+         
+        }
+
+        
+
+        // 한국 시계 버튼 클릭 시
+        koreaButton.onclick = function(){
+           
+                setInterval(setKoreaDate, 1000);//setDate 함수를 1초마다 반복
+                setKoreaDate();
+            
+            
+        }
+
+        // 미국 시계 버튼 클릭 시
+        usaButton.onclick = function(){
+
+
+            console.log("aaa");
+            
+            while(this == setUsaDate()){
+                console.log("kkkkk");
+                setInterval(setUsaDate, 1000);//setDate 함수를 1초마다 반복
+                setUsaDate();
+            }
+
+        }
+
+        // 러시아 시계 버튼 클릭 시
+        russiaButton.onclick = function(){
+            while(this == setRussiaDate()){
+                setInterval(setRussiaDate, 1000);//setDate 함수를 1초마다 반복
+                setRussiaDate();
+            }
+            
+        }
+
+
+        // setInterval(setKoreaDate, 1000);//setDate 함수를 1초마다 반복
+        // setKoreaDate();
+        
+    </script>
+</body>
+</html>

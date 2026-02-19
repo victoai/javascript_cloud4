@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //2달 메뉴 추천하기
+
+        //기능
+        //입력:x
+        //반환: 2달 메뉴 :3차원배열 
+
+
+        function 메뉴추천2달(){
+
+            let month1=[
+                ["마카롱"  ,"푸딩"],  //1주일
+                ["딸기" , "블루베리"],
+                ["케익" ,"쿠키"],
+                ["아이스크림" , "주먹밥"]
+            ] ;
+
+            let month2=[
+                ["토스트" , "핫도그"],  //1주일
+                ["붕어빵", "도넛"],
+                ["견과류" ,"키위"],
+                ["컵밥" , "와플"]
+            ];
+
+
+            let months=[
+                month1, month2
+            ];
+            return months;
+        }
+
+
+        let result  = 메뉴추천2달();
+
+        // 면      (몇번째에 있는 2차원 배열이니 ?)
+        // 행, 열  (2차원)
+
+
+        for( let k=0; k< result.length; k++){    //3차원의 크기=> 2차원배열의 개수  =>2 
+
+
+            for( let i=0; i< result[k].length; i++ ){   //2차원 배열의 크기 => 행의 개수  =>4 
+
+                for( let j=0; j< result[k][i].length; j++){  // result[k][i]  ->열의 개수  =>2
+                    
+                    document.write(  result[k][i][j]);
+
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

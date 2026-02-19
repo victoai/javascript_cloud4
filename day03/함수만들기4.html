@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        //메뉴추전하기 함수
+
+        /*
+
+         기능:메뉴추천
+         입력: x
+         반환: 메뉴명
+        */
+
+         function 메뉴추천하기(){
+            let foodName="돈까스";
+            return foodName;
+         }
+
+
+         let result  =메뉴추천하기();
+         alert( result);
+
+
+         /*
+
+           기능: 메뉴추천
+           입력:x
+           반환: 메뉴명
+          */ 
+
+         function 메뉴추천하기2(){
+                     //    0       1         2 
+            let food= [ "김밥" , "돈까스" ,"초밥"] ;   // 
+            let index  = Math.floor( Math.random() *3);  //  0~2.999999999    => 0  1  2
+            return food[index];
+
+         }
+
+         let result2  = 메뉴추천하기2();
+         alert( result2);
+
+    </script>
+</body>
+</html>

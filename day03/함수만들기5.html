@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+     <img id="result" src="" alt="">
+    <script>
+
+        /*
+          기능 :레시피알려주기
+          입력 :x
+          반환 :x
+
+        */
+
+        function 라면레시피알려주기(){
+            alert("물500ml 냄비에 끓인다");
+            alert("라면과 스프넣는다 5분끓인다");
+            alert("파와 계란 첨가한다"); 
+        }
+
+
+        라면레시피알려주기();
+
+
+
+        
+        /*
+          기능 :레시피알려주기 
+          입력 :x
+          반환 :라면이미지주소
+
+        */
+
+        function 라면레시피알려주기2(){
+            alert("물500ml 냄비에 끓인다");
+            alert("라면과 스프넣는다 5분끓인다");
+            alert("파와 계란 첨가한다"); 
+
+            return  "data:image/webp;base64,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";
+        }
+
+
+
+        let  image= 라면레시피알려주기2();
+        let imgTag= document.getElementById("result");
+        imgTag.src=image;
+        
+
+    </script>
+</body>
+</html>

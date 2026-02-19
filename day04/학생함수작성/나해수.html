@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+      function 랜덤한화이팅메시지를주는함수 () {
+        let messages = [
+          "화이팅",
+          "잘 될거야",
+          "잘하고 있어",
+          "괜찮아",
+          "수고했어",
+          "할 수 있어"
+        ];
+        let index = Math.floor(Math.random() * messages.length);
+        // return messages = Math.floor(Math.random() * messages.length);
+        return messages[index];
+      }
+      //alert(랜덤한화이팅메시지를주는함수());
+
+      while(true){
+         let input = prompt("진행여부  yes/no");
+         if( input =="no") break;
+         alert(랜덤한화이팅메시지를주는함수());
+      }
+    </script>
+</body>
+</html>

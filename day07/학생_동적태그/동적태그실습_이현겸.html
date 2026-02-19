@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .ball {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        background-color: red;
+        margin: 10px;
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+      }
+    </style>
+    <script>
+      function randColor(){
+        let ballColor = ["red", "lightgreen", "yellow", "lightblue"];
+        color = Math.floor(Math.random() * 4)
+        return color;
+      }
+
+      // 로또 번호 생성하여 배열에 저장
+      function generateLotto() {
+        let lotto = [];
+        let randNum = 0;
+        let i = 0;
+        while (i < 6) {
+          randNum = Math.floor(Math.random() * 45);
+          if (randNum == lotto) {
+            continue;
+          }
+          lotto[i] = randNum;
+          i++;
+        }
+        return lotto;
+      }
+
+      // 버튼 클릭 시 로또 번호가 포함된 공 6개 추가
+      function showBall() {
+        const result = document.getElementById("result");
+
+        let lottoNum = generateLotto();
+
+        result.innerHTML=""; // 부모 요소에서 안쪽의 내용을 채우기 전에 초기화
+
+        for (let j = 0; j < 6; j++) {
+          const balls = document.createElement("div");
+          balls.classList.add("ball");
+          balls.innerHTML = lottoNum[j];
+          
+          result.appendChild(balls);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="showBall()">로또번호추첨</button>
+    <div id="result">결과</div>
+  </body>
+</html>

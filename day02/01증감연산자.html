@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //++ ,--  :연산자 , 연산의 결과가 발생한다
+        //증감연산자   ++(변수의 값을 1증가) ,-- (변수의 값을 1 감소)
+
+        //전위, 후위
+        //++a, a++
+        //--a, a--
+
+
+        //공통점 :   변수의 값을 1증가 하거나 변수의 값을 1감소한다 
+        //다른점 :   연산의 결과가 다르다
+
+        let a=5;
+        let b=5;
+
+        let result =  a++;            // a++도 연산의 결과가 발생한다(증가되기전) 
+        let result2 = ++b;            // ++b도 연산의 결과가 발생한다(증가된 후 )
+
+        // let result3 = 3+5;  //3+5 연산의 결과인 8일 발생한다
+
+        //a, b변수의 값이 1증가한다
+        //연산의 결과를 담은 두 변수 result  ,  result2 가 다르다
+        // a++ =>  변수의 값을 1증가 시킨다, 연산의 결과가 증가전의 값을 반환함 (준다)
+
+        console.log( a);
+        console.log( b);
+        console.log( result);
+        console.log( result2);
+
+    </script>
+</body>
+</html>
