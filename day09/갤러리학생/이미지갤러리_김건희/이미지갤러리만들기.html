@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        background: black;
+      }
+      h2 {
+        text-align: center;
+        color: white;
+        margin: 0 auto;
+        padding-top: 20px;
+        font-style: normal;
+        margin-bottom: 20px;
+      }
+      .gallery-wrap {
+        width: 400px;
+        height: 500px;
+        background-color: white;
+        margin: 0 auto;
+        padding-top: 10px;
+        border-radius: 20px;
+        position: relative;
+      }
+      .title{
+        background-color: white;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 20px;
+        font-style: normal;
+      }
+      .gallery {
+        width: 90%;
+        height: 450px;
+        background: white;
+        /* border: 1px solid red; */
+        border-radius: 20px;
+        margin: 0 auto;
+        background-image: url(media/images.png);
+        background-position: center;
+        background-size: cover;
+      }
+      .prev {
+        background: white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -40px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid gray;
+        text-align: center;
+        line-height: 50px;
+      }
+
+      .next {
+        background: white;
+        position: absolute;
+        top: 50%;
+        right: -40px;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid gray;
+        text-align: center;
+        line-height: 50px;
+      }
+    </style>
+    <script>
+      let imgNames = [
+        "media/images.png",
+        "media/나이키.png",
+        "media/원숭이.jpg",
+        "media/여우.jpg",
+      ];
+
+      const titles = [
+        "슈프림",
+        "나이키",
+        "원숭이",
+        "여우",
+      ];
+
+      let index = 0;
+      function next() {
+        // alert("djdjf");
+        index++; // index = index+1;
+
+        if (index >= imgNames.length) {
+          index = 0;
+        }
+
+        const gallery = document.querySelector(".gallery");
+        gallery.style.backgroundImage = "url(" + imgNames[index] + ")";
+        gallery.style.backgroundPosition = "center";
+        gallery.style.backgroundSize = "cover";
+
+        const title = document.querySelector(".title");
+        title.textContent = titles[index];
+
+        gallery.animate(
+          [
+            { transform: "translateX(100%)" }, // 아래에서 시작
+            { transform: "translateX(0)" }, // 원래위치로
+          ],
+          {
+            duration: 1000,
+          },
+        );
+      }
+
+      function prev() {
+        // alert("djdjf");
+        index--; // index = index+1;
+
+        if (index < 0) {
+          index = imgNames.length - 1;
+        }
+        const gallery = document.querySelector(".gallery");
+        gallery.style.backgroundImage = "url(" + imgNames[index] + ")";
+        gallery.style.backgroundPosition = "center";
+        gallery.style.backgroundSize = "cover";
+
+        const title = document.querySelector(".title");
+        title.textContent = titles[index];
+
+        gallery.animate(
+          [
+            { transform: "translateX(-100%)" }, // 아래에서 시작
+            { transform: "translateX(0)" }, // 원래위치로  끝
+          ],
+
+          {
+            duration: 1000,
+          },
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h2>Gallery</h2>
+    </header>
+
+    <div class="gallery-wrap">
+      <div class="gallery"></div>
+      <div class="prev" onclick="prev()"><-</div>
+      <div class="next" onclick="next()">-></div>
+      <div class="title">슈프림</div>
+    </div>
+  </body>
+</html>

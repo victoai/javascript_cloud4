@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .gallery-wrap {
+        /* border: 1px solid black; */
+        border-radius: 10px;
+        width: 400px;
+        height: 400px;
+        position: relative;
+        margin: 0 auto;
+      }
+      .gallery {
+        border: 5px solid rgb(61, 28, 0);
+        border-radius: 10px;
+
+        width: 400px;
+        height: 400px;
+        background-image: url("media/Penguins.png");
+        background-size: cover;
+        background-position: center;
+      }
+      .gallery-btn {
+        width: 30px;
+        height: 30px;
+        /* border: 1px solid black; */
+        position: absolute;
+        top: 120%;
+        text-align: center;
+        transform: translateY(-50%); /* y축 기준 정중앙으로 이동 */
+        border-radius: 20px;
+        width: 80px;
+        background-color: #555;
+        color: #FFF;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .left {
+        left: -20px;
+      }
+      .right {
+        right: -20px;
+      }
+      .title{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        /* border: 1px solid black; */
+        font-size: 34px;
+        font-weight: 500;
+        color: #444;
+      }
+      .fadeIn{
+        animation: fade 0.5s ease-out;
+      }
+
+      @keyframes fade {
+        from{
+          opacity: 0;
+        }to{
+          opacity: 1;
+        }
+      }
+    </style>
+    <script>
+      let imgNames = [
+        "media/Penguins.png",
+        "media/Lighthouse.png",
+        "media/Chrysanthemum.png",
+        "media/Desert.png",
+        "media/Hydrangeas.png",
+        "media/Jellyfish.png",
+        "media/Koala.png",
+        "media/Tulips.png",
+      ];
+
+      const titles = [
+        "펭귄",
+        "집",
+        "국화",
+        "사막",
+        "수국",
+        "해파리",
+        "코알라",
+        "튤립",
+      ];
+
+      let index = 1;
+      function next() {
+        // alert("dsf");
+        // 이미지갤러리 영역 선택하기
+        const gallery = document.querySelector(".gallery");
+        console.log(gallery);
+
+        index++;
+        if (index >= imgNames.length) {
+          index = 0;
+        }
+        // gallery.style.backgroundImage = "url("+ imgNames[index] +")"; // url("media/Penguins.png")
+        gallery.style.backgroundImage = `url( ${imgNames[index]})`;
+        gallery.style.backgroundPosition = "center";
+        gallery.style.backgroundSize = "cover";
+        // 애니메이션 클래스 추가
+        gallery.classList.add("fadeIn");
+        // 이미지 제목 선택하기
+        const title = document.querySelector(".title");
+        title.innerHTML = titles[index];
+
+        
+      
+      }
+
+      
+
+
+      function prev() {
+        // alert("fds");
+        index--;
+        if (index < 0) {
+          index = imgNames.length -1;
+        }
+        const title = document.querySelector(".title");
+        title.innerHTML = titles[index];
+        
+        const gallery = document.querySelector(".gallery");
+        gallery.style.backgroundImage = `url( ${imgNames[index]})`;
+        gallery.style.backgroundPosition = "center";
+        gallery.style.backgroundSize = "cover";
+        gallery.classList.add("fadeIn");
+        
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 갤러리 영역 -->
+    <div class="gallery-wrap">
+      <!-- 갤러리 제목 영역 -->
+       <div class="title">펭윙</div>
+      <!-- 갤러리 이미지 영역 -->
+      <div class="gallery"></div>
+      <!-- 갤러리 버튼 -->
+      <div class="gallery-btn left" onclick="prev()">이전</div>
+      <div class="gallery-btn right" onclick="next()">다음</div>
+    </div>
+  </body>
+</html>

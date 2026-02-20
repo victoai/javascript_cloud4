@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gallery-wrap{
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+
+            position: relative;
+        }
+        .gallery{
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+
+            background-image: url(media/Penguins.png);
+            background-size: cover;
+            background-position: center;
+        }
+        .gallery-btn{
+            font-weight: bold;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 30px;
+            width: 50px;
+            height: 30px;
+            border: 3px solid black;
+            background-color: white;
+            color: black;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);/*자기 높이의 절반만큼 위로 이동*/
+        }
+        .gallery-btn:hover{
+            background-color: black;
+            color: white;
+        }
+        .left{
+            left: -20px;
+        }
+        .right{
+            right: -20px;
+        }
+        .title{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        form{
+            text-align: center;
+        }
+    </style>
+    <script>
+        let imgNames = [
+        "media/Penguins.png",
+        "media/Lighthouse.png",
+        "media/Chrysanthemum.png",
+        "media/Desert.png",
+        "media/Hydrangeas.png",
+        "media/Jellyfish.png",
+        "media/Koala.png",
+        "media/Tulips.png"
+        ];
+
+        let titles = ["펭귄", "집", "국화", "사막", "수국", "해파리", "코알라", "튤립"];
+
+        /*객체배열로 사용가능
+        let images = [
+            {
+                names: "media/Penguins.png",
+                title: "펭귄"
+            }
+        ]
+        */
+
+        let index = 1;
+
+
+        function next(){
+
+            // 이미지가 나올 gallery 영역 선택
+            const gallery = document.querySelector(".gallery");
+            gallery.style.backgroundImage = `url(${imgNames[index]})`;
+            gallery.style.backgroundPosition = "center";
+            gallery.style.backgroundSize = "cover";
+
+            // 이미지 제목 선택해서 넣기
+            const title = document.querySelector(".title");
+            title.innerHTML = titles[index];
+
+            index++;
+
+            if(index >= imgNames.length){
+                index = 0;
+            }
+
+        }
+
+        function prev(){
+
+            index--;
+
+            if(index < 0){
+                index = imgNames.length-1;
+            }
+
+            // 이미지 제목 선택해서 넣기
+            const title = document.querySelector(".title");
+            title.innerHTML = titles[index];
+
+            // 이미지가 나올 gallery 영역 선택
+            const gallery = document.querySelector(".gallery");
+            gallery.style.backgroundImage = `url(${imgNames[index]})`;
+            gallery.style.backgroundPosition = "center";
+            gallery.style.backgroundSize = "cover";
+
+        }
+
+        
+        function add(){
+            const frm = document.input_form;
+            const photoLink = frm.photo_link;
+            const photoTitle = frm.photo_title;
+
+            imgNames.push(photoLink.value);
+            titles.push(photoTitle.value);
+
+            alert("추가되었습니다!");
+        }
+    </script>
+</head>
+<body>
+    <!-- 갤러리 영역 -->
+    <div class="gallery-wrap">
+        <!-- 갤러리 타이틀 제목 -->
+        <div class="title">펭귄</div>
+
+        <!-- 갤러리 이미지 영역 -->
+        <div class="gallery"></div>
+
+        <!-- 갤러리 버튼 -->
+        <div class="gallery-btn left" onclick="prev()">left</div>
+        <div class="gallery-btn right" onclick="next()">right</div>
+
+        <!-- 사진 추가 -->
+        <!-- form 안에 있는 button을 누르면 새로고침됨->button type을 button으로 해야 새로고침 안됨 -->
+        <form name="input_form">
+            <h2>원하는 사진의 링크 입력</h2>
+            <input type="text" name="photo_link" placeholder="사진 링크">
+            <input type="text" name="photo_title" placeholder="사진 제목"><br>
+            <button type="button" onclick="add()">추가</button>
+        </form>
+    </div>
+</body>
+</html>
